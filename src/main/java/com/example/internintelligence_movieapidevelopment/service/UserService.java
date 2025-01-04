@@ -49,6 +49,8 @@ public class UserService {
         UserEntity updateUser = userMapper.mapToEntity(userDto);
         existingUser.setFirstName(updateUser.getFirstName());
         existingUser.setLastName(updateUser.getLastName());
+
+        userRepository.save(existingUser);
     }
 
     public void deleteUser(Long userId) {
